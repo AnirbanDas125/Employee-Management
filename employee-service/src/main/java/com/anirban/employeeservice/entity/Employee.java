@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+//import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Employee {
@@ -15,14 +16,13 @@ public class Employee {
 	private String firstName;
 	private String lastName;
 	private String email;
-	@ManyToMany
-	private String departmentId;
+	private long departmentId;
 	
 	public Employee() {
 		
 	}
 
-	public Employee(long employeeId, String firstName, String lastName, String email, String departmentId) {
+	public Employee(long employeeId, String firstName, String lastName, String email, long departmentId) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
@@ -63,11 +63,11 @@ public class Employee {
 		this.email = email;
 	}
 
-	public String getDepartmentId() {
+	public long getDepartmentId() {
 		return departmentId;
 	}
 
-	public void setDepartmentId(String departmentId) {
+	public void setDepartmentId(long departmentId) {
 		this.departmentId = departmentId;
 	}
 
